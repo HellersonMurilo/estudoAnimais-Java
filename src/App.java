@@ -3,6 +3,7 @@ import java.util.Scanner;
 import Classes.Cachorro;
 import Classes.Cavalo;
 import Classes.Preguica;
+import Classes.Veterinaria;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -12,14 +13,22 @@ public class App {
         Cachorro cachorro = new Cachorro(null, 0);
         Cavalo cavalo = new Cavalo(null, 0);
         Preguica preguica = new Preguica(null, 0);
+        Veterinaria veterinaria = new Veterinaria();
         boolean loop = false;
 
+        String animal = veterinaria.examinar(cachorro);
+
         while (loop == false) {
-            System.out.println("Escolha o que deseja fazer: \n1 - Registrar Animal \n2 - Ouvir Animais\n3 - Encerrar");
+            System.out
+                    .println(
+                            "Escolha o que deseja fazer: \n1 - Registrar Animal \n2 - Ouvir Animais\n3 - Veterinaria\\n"
+                                    + //
+                                    "4 - Encerrar");
             String escolha = sc.next();
             switch (escolha) {
                 case "1":
-                    System.out.println("\n\nEscolha o Animal que deseja registrar\n1 - Cachorro \n2 - Cavalo \n3 - Preguiça");
+                    System.out.println(
+                            "\n\nEscolha o Animal que deseja registrar\n1 - Cachorro \n2 - Cavalo \n3 - Preguiça");
                     String escolhaAnimal = sc.next();
                     switch (escolhaAnimal) {
                         case "1":
@@ -69,6 +78,9 @@ public class App {
                     }
                     break;
                 case "3":
+                    System.out.println("\nSEJA BEM VINDO A VETERINARIA\n Qual animal deseja examinar?\n1 - Cachorro\n2 - Cavalo\n3 - Preguiça");
+                    break;
+                case "4":
                     System.out.println("Sistema Encerrado...");
                     loop = true;
                     System.exit(0);

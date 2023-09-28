@@ -8,7 +8,7 @@ public class Preguica extends Animais {
 
     @Override
     public String emitirSom() {
-        return null;
+        return ("A preguiça faz hummmm\n");
     }
 
     public String subirArvore(){
